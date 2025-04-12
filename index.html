@@ -3,27 +3,898 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Search</title>
+    <title>AI Tools Directory</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <div class="weather-container">
-            <div class="weather-info">
-                <div class="location">Loading location...</div>
-                <div class="temperature">--°C</div>
-                <div class="weather-description">Loading weather...</div>
-            </div>
-        </div>
+    <header>
+        <h1>AI Tools Directory</h1>
+        <p>Discover the best AI tools and applications on the internet</p>
+        
+        <!-- Search Bar -->
         <div class="search-container">
-            <h1>Simple Search</h1>
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Search the web...">
-                <button id="searchButton">Search</button>
-            </div>
-            <div id="results" class="results-container"></div>
+            <input type="text" id="searchInput" placeholder="Search for AI tools...">
+            <button type="button"><i class="fas fa-search"></i></button>
         </div>
-    </div>
-    <script src="script.js"></script>
+
+        <!-- Filters -->
+        <div class="filters">
+            <div class="filter-group">
+                <label>Sort by:</label>
+                <select id="sortFilter">
+                    <option value="popular">Most Popular</option>
+                    <option value="newest">Newest</option>
+                    <option value="rating">Highest Rated</option>
+                    <option value="price">Price</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Price:</label>
+                <select id="priceFilter">
+                    <option value="all">All</option>
+                    <option value="free">Free</option>
+                    <option value="freemium">Freemium</option>
+                    <option value="paid">Paid</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Features:</label>
+                <select id="featureFilter">
+                    <option value="all">All Features</option>
+                    <option value="api">API Access</option>
+                    <option value="mobile">Mobile App</option>
+                    <option value="team">Team Features</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- New & Trending Section -->
+        <section class="trending-section">
+            <h2><i class="fas fa-fire"></i> New & Trending</h2>
+            <div class="trending-grid">
+                <div class="trending-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT" class="tool-logo">
+                    <div class="trending-info">
+                        <h3>ChatGPT</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.8 (2.3k reviews)</span>
+                        </div>
+                        <p class="price">Free + $20/month Pro</p>
+                        <div class="features">
+                            <span><i class="fas fa-mobile-alt"></i> Mobile App</span>
+                            <span><i class="fas fa-code"></i> API</span>
+                            <span><i class="fas fa-users"></i> Team</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more trending cards -->
+            </div>
+        </section>
+
+        <section class="category">
+            <h2><i class="fas fa-robot"></i> AI Chatbots & Assistants</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>ChatGPT</h3>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.8</span>
+                        </div>
+                        <p>Advanced conversational AI by OpenAI</p>
+                        <div class="price-tag">Free + $20/month Pro</div>
+                        <div class="features">
+                            <span><i class="fas fa-mobile-alt"></i> Mobile</span>
+                            <span><i class="fas fa-code"></i> API</span>
+                        </div>
+                        <a href="https://chat.openai.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <img src="https://www.anthropic.com/images/claude-logo.png" alt="Claude" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Claude</h3>
+                        <p>AI assistant by Anthropic</p>
+                        <a href="https://claude.ai" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <img src="https://www.gstatic.com/lamda/images/bard_logo_light.png" alt="Bard" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Bard</h3>
+                        <p>Google's conversational AI</p>
+                        <a href="https://bard.google.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Perplexity_AI_logo.svg" alt="Perplexity" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Perplexity</h3>
+                        <p>AI search assistant with citations</p>
+                        <a href="https://www.perplexity.ai" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Pi_AI_logo.svg" alt="Pi" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Pi</h3>
+                        <p>Personal AI assistant by Inflection</p>
+                        <a href="https://pi.ai" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Character_AI_logo.svg" alt="Character.AI" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Character.AI</h3>
+                        <p>Chat with AI characters</p>
+                        <a href="https://character.ai" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/YouChat_logo.svg" alt="YouChat" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>YouChat</h3>
+                        <p>AI search and chat assistant</p>
+                        <a href="https://you.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Hugging_Face_logo.svg" alt="HuggingChat" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>HuggingChat</h3>
+                        <p>Open-source AI chat assistant</p>
+                        <a href="https://huggingface.co/chat" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Mistral_AI_logo.svg" alt="Mistral" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Mistral</h3>
+                        <p>Open-source AI models</p>
+                        <a href="https://mistral.ai" target="_blank">Visit</a>
+                    </div>
+                </div>
+            </div>
+            <button class="see-more-btn">See More</button>
+        </section>
+
+        <section class="category">
+            <h2><i class="fas fa-image"></i> AI Image Generation</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/DALL-E_logo.svg" alt="DALL-E" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>DALL-E</h3>
+                        <p>AI image generation by OpenAI</p>
+                        <a href="https://openai.com/dall-e-2" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Midjourney_logo.svg" alt="Midjourney" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Midjourney</h3>
+                        <p>AI art generation platform</p>
+                        <a href="https://www.midjourney.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Stable_Diffusion_logo.svg" alt="Stable Diffusion" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Stable Diffusion</h3>
+                        <p>Open-source image generation</p>
+                        <a href="https://stability.ai" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Adobe_Firefly_logo.svg" alt="Adobe Firefly" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Adobe Firefly</h3>
+                        <p>Creative AI by Adobe</p>
+                        <a href="https://www.adobe.com/sensei/generative-ai/firefly.html" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Leonardo_AI_logo.svg" alt="Leonardo.AI" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Leonardo.AI</h3>
+                        <p>AI art generation platform</p>
+                        <a href="https://leonardo.ai" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Bing_Image_Creator_logo.svg" alt="Bing Image Creator" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Bing Image Creator</h3>
+                        <p>Microsoft's AI image generator</p>
+                        <a href="https://www.bing.com/create" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/DreamStudio_logo.svg" alt="DreamStudio" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>DreamStudio</h3>
+                        <p>Stable Diffusion web interface</p>
+                        <a href="https://dreamstudio.ai" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Canva_AI_logo.svg" alt="Canva AI" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Canva AI</h3>
+                        <p>AI-powered design tool</p>
+                        <a href="https://www.canva.com/ai-image-generator" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Playground_AI_logo.svg" alt="Playground AI" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Playground AI</h3>
+                        <p>Free-to-use online AI image creator</p>
+                        <a href="https://playground.ai" target="_blank">Visit</a>
+                    </div>
+                </div>
+            </div>
+            <button class="see-more-btn">See More</button>
+        </section>
+
+        <section class="category">
+            <h2><i class="fas fa-code"></i> AI Development Tools</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/GitHub_Copilot_logo.svg" alt="GitHub Copilot" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>GitHub Copilot</h3>
+                        <p>AI pair programmer</p>
+                        <a href="https://github.com/features/copilot" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Cursor_logo.svg" alt="Cursor" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Cursor</h3>
+                        <p>AI-powered code editor</p>
+                        <a href="https://cursor.sh" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Replit_logo.svg" alt="Replit" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Replit</h3>
+                        <p>AI-assisted coding platform</p>
+                        <a href="https://replit.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Tabnine_logo.svg" alt="Tabnine" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Tabnine</h3>
+                        <p>AI code completion tool</p>
+                        <a href="https://www.tabnine.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Codeium_logo.svg" alt="Codeium" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Codeium</h3>
+                        <p>Free AI code assistant</p>
+                        <a href="https://codeium.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Amazon_CodeWhisperer_logo.svg" alt="Amazon CodeWhisperer" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Amazon CodeWhisperer</h3>
+                        <p>AWS AI coding companion</p>
+                        <a href="https://aws.amazon.com/codewhisperer" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Sourcegraph_Cody_logo.svg" alt="Sourcegraph Cody" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Sourcegraph Cody</h3>
+                        <p>AI coding assistant</p>
+                        <a href="https://about.sourcegraph.com/cody" target="_blank">Visit</a>
+                    </div>
+                </div>
+            </div>
+            <button class="see-more-btn">See More</button>
+        </section>
+
+        <section class="category">
+            <h2><i class="fas fa-video"></i> AI Video & Audio</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/RunwayML_logo.svg" alt="RunwayML" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>RunwayML</h3>
+                        <p>AI video generation and editing</p>
+                        <a href="https://runwayml.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/ElevenLabs_logo.svg" alt="ElevenLabs" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>ElevenLabs</h3>
+                        <p>AI voice generation</p>
+                        <a href="https://elevenlabs.io" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Descript_logo.svg" alt="Descript" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Descript</h3>
+                        <p>AI-powered video editing</p>
+                        <a href="https://www.descript.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Synthesia_logo.svg" alt="Synthesia" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Synthesia</h3>
+                        <p>AI video generation with avatars</p>
+                        <a href="https://www.synthesia.io" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Murf_logo.svg" alt="Murf" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Murf</h3>
+                        <p>AI voice generator</p>
+                        <a href="https://murf.ai" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/HeyGen_logo.svg" alt="HeyGen" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>HeyGen</h3>
+                        <p>AI video creation platform</p>
+                        <a href="https://www.heygen.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Pictory_logo.svg" alt="Pictory" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Pictory</h3>
+                        <p>AI video creation from text</p>
+                        <a href="https://pictory.ai" target="_blank">Visit</a>
+                    </div>
+                </div>
+            </div>
+            <button class="see-more-btn">See More</button>
+        </section>
+
+        <section class="category">
+            <h2><i class="fas fa-chart-line"></i> AI Business & Productivity</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Notion_logo.svg" alt="Notion AI" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Notion AI</h3>
+                        <p>AI-powered workspace</p>
+                        <a href="https://www.notion.so/product/ai" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Jasper_logo.svg" alt="Jasper" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Jasper</h3>
+                        <p>AI content creation</p>
+                        <a href="https://www.jasper.ai" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Copy_ai_logo.svg" alt="Copy.ai" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Copy.ai</h3>
+                        <p>AI writing assistant</p>
+                        <a href="https://www.copy.ai" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Grammarly_logo.svg" alt="Grammarly" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Grammarly</h3>
+                        <p>AI writing assistant</p>
+                        <a href="https://www.grammarly.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Otter_logo.svg" alt="Otter.ai" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Otter.ai</h3>
+                        <p>AI meeting assistant</p>
+                        <a href="https://otter.ai" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Fireflies_logo.svg" alt="Fireflies" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Fireflies</h3>
+                        <p>AI meeting transcription</p>
+                        <a href="https://fireflies.ai" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Mem_logo.svg" alt="Mem.ai" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Mem.ai</h3>
+                        <p>AI-powered knowledge management</p>
+                        <a href="https://mem.ai" target="_blank">Visit</a>
+                    </div>
+                </div>
+            </div>
+            <button class="see-more-btn">See More</button>
+        </section>
+
+        <section class="category">
+            <h2><i class="fas fa-brain"></i> AI Research & Education</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Elicit_logo.svg" alt="Elicit" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Elicit</h3>
+                        <p>AI research assistant</p>
+                        <a href="https://elicit.org" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Consensus_logo.svg" alt="Consensus" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Consensus</h3>
+                        <p>AI research search engine</p>
+                        <a href="https://consensus.app" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Khan_Academy_logo.svg" alt="Khanmigo" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Khanmigo</h3>
+                        <p>AI tutor by Khan Academy</p>
+                        <a href="https://www.khanacademy.org/khan-labs" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Scite_logo.svg" alt="Scite" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Scite</h3>
+                        <p>AI research assistant</p>
+                        <a href="https://scite.ai" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Scholarcy_logo.svg" alt="Scholarcy" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Scholarcy</h3>
+                        <p>AI research summarizer</p>
+                        <a href="https://www.scholarcy.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/ChatPDF_logo.svg" alt="ChatPDF" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>ChatPDF</h3>
+                        <p>AI PDF analysis tool</p>
+                        <a href="https://www.chatpdf.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Explainpaper_logo.svg" alt="Explainpaper" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Explainpaper</h3>
+                        <p>AI research paper explainer</p>
+                        <a href="https://www.explainpaper.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+            </div>
+            <button class="see-more-btn">See More</button>
+        </section>
+
+        <section class="category">
+            <h2><i class="fas fa-mobile-alt"></i> AI Mobile Apps</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>ChatGPT Mobile</h3>
+                        <p>OpenAI's mobile app</p>
+                        <a href="https://apps.apple.com/app/chatgpt/id6448311069" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Lensa_AI_logo.svg" alt="Lensa AI" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Lensa AI</h3>
+                        <p>AI photo editing app</p>
+                        <a href="https://apps.apple.com/app/lensa-ai-photo-video-editor/id1436732536" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Wombo_Dream_logo.svg" alt="Wombo Dream" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Wombo Dream</h3>
+                        <p>AI art generation app</p>
+                        <a href="https://apps.apple.com/app/wombo-dream-ai-art-generator/id1586361748" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Remini_logo.svg" alt="Remini" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Remini</h3>
+                        <p>AI photo enhancer</p>
+                        <a href="https://apps.apple.com/app/remini-ai-photo-enhancer/id1548193893" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Wonder_AI_logo.svg" alt="Wonder AI" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Wonder AI</h3>
+                        <p>AI art generator app</p>
+                        <a href="https://apps.apple.com/app/wonder-ai-art-generator/id1624159729" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/AI_Mirror_logo.svg" alt="AI Mirror" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>AI Mirror</h3>
+                        <p>AI photo transformation app</p>
+                        <a href="https://apps.apple.com/app/ai-mirror-ai-photo-transformer/id6443859039" target="_blank">Visit</a>
+                    </div>
+                </div>
+            </div>
+            <button class="see-more-btn">See More</button>
+        </section>
+
+        <section class="category">
+            <h2><i class="fas fa-robot"></i> AI Automation & Workflow</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Zapier_logo.svg" alt="Zapier" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Zapier</h3>
+                        <p>AI-powered automation</p>
+                        <a href="https://zapier.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Make_logo.svg" alt="Make" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Make (Integromat)</h3>
+                        <p>AI workflow automation</p>
+                        <a href="https://www.make.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Bardeen_logo.svg" alt="Bardeen" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Bardeen</h3>
+                        <p>AI workflow automation</p>
+                        <a href="https://www.bardeen.ai" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Automation_Anywhere_logo.svg" alt="Automation Anywhere" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Automation Anywhere</h3>
+                        <p>AI-powered RPA</p>
+                        <a href="https://www.automationanywhere.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/UiPath_logo.svg" alt="UiPath" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>UiPath</h3>
+                        <p>AI-driven automation</p>
+                        <a href="https://www.uipath.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Workato_logo.svg" alt="Workato" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Workato</h3>
+                        <p>AI workflow automation</p>
+                        <a href="https://www.workato.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+            </div>
+            <button class="see-more-btn">See More</button>
+        </section>
+
+        <section class="category">
+            <h2><i class="fas fa-heartbeat"></i> AI Healthcare</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/DeepMind_logo.svg" alt="DeepMind" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>DeepMind Health</h3>
+                        <p>AI for medical research</p>
+                        <a href="https://deepmind.com/health" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Nuance_logo.svg" alt="Nuance" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Nuance DAX</h3>
+                        <p>AI-powered clinical documentation</p>
+                        <a href="https://www.nuance.com/healthcare.html" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/PathAI_logo.svg" alt="PathAI" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>PathAI</h3>
+                        <p>AI pathology platform</p>
+                        <a href="https://www.pathai.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Butterfly_Network_logo.svg" alt="Butterfly Network" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Butterfly Network</h3>
+                        <p>AI-powered ultrasound</p>
+                        <a href="https://www.butterflynetwork.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+            </div>
+            <button class="see-more-btn">See More</button>
+        </section>
+
+        <section class="category">
+            <h2><i class="fas fa-chart-pie"></i> AI Finance</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Kensho_logo.svg" alt="Kensho" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Kensho</h3>
+                        <p>AI for financial analysis</p>
+                        <a href="https://www.kensho.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Ayasdi_logo.svg" alt="Ayasdi" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Ayasdi</h3>
+                        <p>AI for financial services</p>
+                        <a href="https://www.ayasdi.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Zest_Finance_logo.svg" alt="Zest Finance" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Zest Finance</h3>
+                        <p>AI lending platform</p>
+                        <a href="https://www.zest.ai" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Kavout_logo.svg" alt="Kavout" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Kavout</h3>
+                        <p>AI investment platform</p>
+                        <a href="https://www.kavout.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+            </div>
+            <button class="see-more-btn">See More</button>
+        </section>
+
+        <section class="category">
+            <h2><i class="fas fa-gamepad"></i> AI Gaming</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Unity_logo.svg" alt="Unity" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Unity AI</h3>
+                        <p>AI game development</p>
+                        <a href="https://unity.com/ai" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Inworld_AI_logo.svg" alt="Inworld AI" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Inworld AI</h3>
+                        <p>AI character creation</p>
+                        <a href="https://inworld.ai" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Mods_AI_logo.svg" alt="Mods AI" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Mods AI</h3>
+                        <p>AI game modding</p>
+                        <a href="https://mods.ai" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Scenario_logo.svg" alt="Scenario" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Scenario</h3>
+                        <p>AI game asset generation</p>
+                        <a href="https://www.scenario.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+            </div>
+            <button class="see-more-btn">See More</button>
+        </section>
+
+        <section class="category">
+            <h2><i class="fas fa-music"></i> AI Music & Audio</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Suno_AI_logo.svg" alt="Suno AI" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Suno AI</h3>
+                        <p>AI music generation</p>
+                        <a href="https://suno.ai" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Soundraw_logo.svg" alt="Soundraw" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Soundraw</h3>
+                        <p>AI music creation</p>
+                        <a href="https://soundraw.io" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/LALAL_AI_logo.svg" alt="LALAL.AI" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>LALAL.AI</h3>
+                        <p>AI audio separation</p>
+                        <a href="https://www.lalal.ai" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Mubert_logo.svg" alt="Mubert" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Mubert</h3>
+                        <p>AI music streaming</p>
+                        <a href="https://mubert.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+            </div>
+            <button class="see-more-btn">See More</button>
+        </section>
+
+        <section class="category">
+            <h2><i class="fas fa-language"></i> AI Language & Translation</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/DeepL_logo.svg" alt="DeepL" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>DeepL</h3>
+                        <p>AI translation service</p>
+                        <a href="https://www.deepl.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Reverso_logo.svg" alt="Reverso" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Reverso</h3>
+                        <p>AI language learning</p>
+                        <a href="https://www.reverso.net" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Elsa_Speak_logo.svg" alt="ELSA Speak" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>ELSA Speak</h3>
+                        <p>AI language tutor</p>
+                        <a href="https://elsaspeak.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+                <div class="tool-card hidden">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Lingoda_logo.svg" alt="Lingoda" class="tool-logo">
+                    <div class="tool-info">
+                        <h3>Lingoda</h3>
+                        <p>AI-powered language school</p>
+                        <a href="https://www.lingoda.com" target="_blank">Visit</a>
+                    </div>
+                </div>
+            </div>
+            <button class="see-more-btn">See More</button>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter">
+            <h2>Stay Updated with AI Tools</h2>
+            <p>Subscribe to our newsletter for weekly updates on new AI tools and features</p>
+            <form id="newsletterForm">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About</h3>
+                <p>AI Tools Directory is a comprehensive guide to the best AI tools and applications available today.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Submit a Tool</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">© 2024 AI Tools Directory | Updated regularly</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.see-more-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.parentElement;
+                const hiddenCards = category.querySelectorAll('.hidden');
+                const isExpanded = category.classList.contains('expanded');
+                
+                if (isExpanded) {
+                    hiddenCards.forEach(card => card.style.display = 'none');
+                    button.textContent = 'See More';
+                    category.classList.remove('expanded');
+                } else {
+                    hiddenCards.forEach(card => card.style.display = 'block');
+                    button.textContent = 'See Less';
+                    category.classList.add('expanded');
+                }
+            });
+        });
+
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const toolCards = document.querySelectorAll('.tool-card');
+            
+            toolCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        document.getElementById('sortFilter').addEventListener('change', function(e) {
+            // Implement sorting logic
+        });
+
+        document.getElementById('priceFilter').addEventListener('change', function(e) {
+            // Implement price filtering
+        });
+
+        document.getElementById('featureFilter').addEventListener('change', function(e) {
+            // Implement feature filtering
+        });
+
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Implement newsletter subscription logic
+        });
+    </script>
 </body>
 </html> 
