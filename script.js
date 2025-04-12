@@ -6,26 +6,66 @@ document.addEventListener('DOMContentLoaded', () => {
     const temperatureElement = document.querySelector('.temperature');
     const weatherDescriptionElement = document.querySelector('.weather-description');
 
-    // OpenWeatherMap API key - Replace with your own API key
-    const API_KEY = 'YOUR_API_KEY'; // You need to get this from OpenWeatherMap
-
     // Function to get weather data
     async function getWeather(latitude, longitude) {
         try {
-            const response = await fetch(
-                `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${API_KEY}`
+            // First get location name using reverse geocoding
+            const locationResponse = await fetch(
+                `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`
             );
-            const data = await response.json();
+            const locationData = await locationResponse.json();
             
-            locationElement.textContent = data.name;
-            temperatureElement.textContent = `${Math.round(data.main.temp)}°C`;
-            weatherDescriptionElement.textContent = data.weather[0].description;
+            // Then get weather data from Open-Meteo
+            const weatherResponse = await fetch(
+                `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`
+            );
+            const weatherData = await weatherResponse.json();
+            
+            // Update the UI
+            locationElement.textContent = locationData.address.city || locationData.address.town || locationData.address.village || 'Unknown Location';
+            temperatureElement.textContent = `${Math.round(weatherData.current_weather.temperature)}°C`;
+            
+            // Get weather description based on weather code
+            const weatherCode = weatherData.current_weather.weathercode;
+            const weatherDescription = getWeatherDescription(weatherCode);
+            weatherDescriptionElement.textContent = weatherDescription;
         } catch (error) {
             console.error('Error fetching weather:', error);
             locationElement.textContent = 'Error loading weather';
             temperatureElement.textContent = '--°C';
             weatherDescriptionElement.textContent = 'Please try again later';
         }
+    }
+
+    // Function to convert weather code to description
+    function getWeatherDescription(code) {
+        const descriptions = {
+            0: 'Clear sky',
+            1: 'Mainly clear',
+            2: 'Partly cloudy',
+            3: 'Overcast',
+            45: 'Fog',
+            48: 'Depositing rime fog',
+            51: 'Light drizzle',
+            53: 'Moderate drizzle',
+            55: 'Dense drizzle',
+            61: 'Light rain',
+            63: 'Moderate rain',
+            65: 'Heavy rain',
+            71: 'Light snow',
+            73: 'Moderate snow',
+            75: 'Heavy snow',
+            77: 'Snow grains',
+            80: 'Light rain showers',
+            81: 'Moderate rain showers',
+            82: 'Violent rain showers',
+            85: 'Light snow showers',
+            86: 'Heavy snow showers',
+            95: 'Thunderstorm',
+            96: 'Thunderstorm with light hail',
+            99: 'Thunderstorm with heavy hail'
+        };
+        return descriptions[code] || 'Unknown weather condition';
     }
 
     // Function to get user's location
