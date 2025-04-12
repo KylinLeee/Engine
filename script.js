@@ -6,6 +6,77 @@ document.addEventListener('DOMContentLoaded', () => {
     const temperatureElement = document.querySelector('.temperature');
     const weatherDescriptionElement = document.querySelector('.weather-description');
 
+    // NetToolkit API key
+    const API_KEY = 'test_IRekVs8gzxfJrMo39FgvybYUY7vTDHuV7P3CUraU';
+
+    // Function to perform search
+    async function performSearch(query) {
+        try {
+            const response = await fetch(
+                `https://api.nettoolkit.com/v1/search?q=${encodeURIComponent(query)}`,
+                {
+                    headers: {
+                        'Authorization': `Bearer ${API_KEY}`,
+                        'Content-Type': 'application/json'
+                    }
+                }
+            );
+            const data = await response.json();
+            
+            // Clear previous results
+            resultsContainer.innerHTML = '';
+            
+            if (data.code === 1000 && data.results && data.results.length > 0) {
+                data.results.forEach(result => {
+                    const resultItem = document.createElement('div');
+                    resultItem.className = 'result-item';
+                    
+                    const title = document.createElement('a');
+                    title.className = 'result-title';
+                    title.href = result.url || '#';
+                    title.textContent = result.title || 'Untitled';
+                    title.target = '_blank';
+                    
+                    const url = document.createElement('div');
+                    url.className = 'result-url';
+                    url.textContent = result.url || '';
+                    
+                    const snippet = document.createElement('div');
+                    snippet.className = 'result-snippet';
+                    snippet.textContent = result.description || result.message || '';
+                    
+                    resultItem.appendChild(title);
+                    if (result.url) resultItem.appendChild(url);
+                    resultItem.appendChild(snippet);
+                    
+                    resultsContainer.appendChild(resultItem);
+                });
+            } else {
+                resultsContainer.innerHTML = '<div class="result-item">No results found</div>';
+            }
+        } catch (error) {
+            console.error('Error fetching search results:', error);
+            resultsContainer.innerHTML = '<div class="result-item">Error fetching results. Please try again.</div>';
+        }
+    }
+
+    // Event listeners for search
+    searchButton.addEventListener('click', () => {
+        const query = searchInput.value.trim();
+        if (query) {
+            performSearch(query);
+        }
+    });
+
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            const query = searchInput.value.trim();
+            if (query) {
+                performSearch(query);
+            }
+        }
+    });
+
     // Function to get weather data
     async function getWeather(latitude, longitude) {
         try {
@@ -91,65 +162,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Get weather on page load
     getLocation();
-
-    // Function to perform search
-    async function performSearch(query) {
-        try {
-            // Using DuckDuckGo's API as it doesn't require an API key
-            const response = await fetch(`https://api.duckduckgo.com/?q=${encodeURIComponent(query)}&format=json`);
-            const data = await response.json();
-            
-            // Clear previous results
-            resultsContainer.innerHTML = '';
-            
-            if (data.RelatedTopics && data.RelatedTopics.length > 0) {
-                data.RelatedTopics.forEach(result => {
-                    const resultItem = document.createElement('div');
-                    resultItem.className = 'result-item';
-                    
-                    const title = document.createElement('a');
-                    title.className = 'result-title';
-                    title.href = result.FirstURL;
-                    title.textContent = result.Text.split(' - ')[0];
-                    title.target = '_blank';
-                    
-                    const url = document.createElement('div');
-                    url.className = 'result-url';
-                    url.textContent = result.FirstURL;
-                    
-                    const snippet = document.createElement('div');
-                    snippet.className = 'result-snippet';
-                    snippet.textContent = result.Text;
-                    
-                    resultItem.appendChild(title);
-                    resultItem.appendChild(url);
-                    resultItem.appendChild(snippet);
-                    
-                    resultsContainer.appendChild(resultItem);
-                });
-            } else {
-                resultsContainer.innerHTML = '<div class="result-item">No results found</div>';
-            }
-        } catch (error) {
-            console.error('Error fetching search results:', error);
-            resultsContainer.innerHTML = '<div class="result-item">Error fetching results. Please try again.</div>';
-        }
-    }
-
-    // Event listeners
-    searchButton.addEventListener('click', () => {
-        const query = searchInput.value.trim();
-        if (query) {
-            performSearch(query);
-        }
-    });
-
-    searchInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            const query = searchInput.value.trim();
-            if (query) {
-                performSearch(query);
-            }
-        }
-    });
 }); 
