@@ -127,4 +127,72 @@ button:hover {
 .weather-description {
     font-size: 1rem;
     color: #545454;
+}
+
+/* Google Search Box Styling */
+.gsc-control-cse {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+.gsc-search-box {
+    margin: 0 auto !important;
+    max-width: 600px !important;
+}
+
+.gsc-input-box {
+    border: 1px solid #dfe1e5 !important;
+    border-radius: 24px !important;
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.1) !important;
+}
+
+.gsc-input-box:focus-within {
+    box-shadow: 0 1px 6px rgba(32, 33, 36, 0.2) !important;
+}
+
+.gsc-search-button {
+    background-color: #4285f4 !important;
+    border: none !important;
+    border-radius: 24px !important;
+    padding: 12px 24px !important;
+    color: white !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s !important;
+}
+
+.gsc-search-button:hover {
+    background-color: #3367d6 !important;
+}
+
+.gsc-results-wrapper-overlay {
+    border: none !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 8px !important;
+}
+
+.gsc-result {
+    background-color: white !important;
+    border: none !important;
+    padding: 20px !important;
+    margin-bottom: 15px !important;
+    border-radius: 8px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+.gs-title {
+    color: #1a0dab !important;
+    font-size: 18px !important;
+    text-decoration: none !important;
+}
+
+.gs-visibleUrl {
+    color: #006621 !important;
+    font-size: 14px !important;
+}
+
+.gs-snippet {
+    color: #545454 !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
 } 
