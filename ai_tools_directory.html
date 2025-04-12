@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tools Directory</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .tool-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            height: 100%;
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+        .tool-logo {
+            width: 100px;
+            height: 100px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem auto;
+            padding: 1rem;
+            overflow: hidden;
+            position: relative;
+        }
+        .tool-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+        .tool-logo i {
+            font-size: 2.5rem;
+            color: #0d6efd;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .tool-logo img.error {
+            opacity: 0;
+        }
+        .tool-logo img.error + i {
+            opacity: 1;
+        }
+        .category-title {
+            margin: 2rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e9ecef;
+        }
+        .tool-info {
+            padding: 1rem;
+            text-align: center;
+        }
+        .tool-name {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .tool-description {
+            font-size: 0.9rem;
+            color: #6c757d;
+            min-height: 40px;
+        }
+        .tool-link {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #0d6efd;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        .tool-link:hover {
+            background-color: #0b5ed7;
+            color: white;
+        }
+        .category-icon {
+            margin-right: 0.5rem;
+            color: #0d6efd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="text-center mb-5">AI Tools Directory</h1>
+
+        <!-- AI Chatbots & Assistants -->
+        <h2 class="category-title"><i class="fas fa-robot category-icon"></i>AI Chatbots & Assistants</h2>
+        <div class="row g-4">
+            <div class="col-md-4 col-lg-3">
+                <div class="tool-card">
+                    <div class="tool-info">
+                        <div class="tool-logo">
+                            <img src="https://openai.com/content/images/2022/05/openai-avatar.png" alt="ChatGPT" onerror="this.classList.add('error')">
+                            <i class="fas fa-comment-dots"></i>
+                        </div>
+                        <h3 class="tool-name">ChatGPT</h3>
+                        <p class="tool-description">Advanced conversational AI by OpenAI</p>
+                        <a href="https://chat.openai.com" class="tool-link" target="_blank">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="tool-card">
+                    <div class="tool-info">
+                        <div class="tool-logo">
+                            <img src="https://claude.ai/static/claude-logo.svg" alt="Claude" onerror="this.classList.add('error')">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="tool-name">Claude</h3>
+                        <p class="tool-description">AI assistant by Anthropic</p>
+                        <a href="https://claude.ai" class="tool-link" target="_blank">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="tool-card">
+                    <div class="tool-info">
+                        <div class="tool-logo">
+                            <img src="https://www.gstatic.com/lamda/images/sparkle_resting_v2_1ff6f6a71f2d298b1a31.gif" alt="Bard" onerror="this.classList.add('error')">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <h3 class="tool-name">Bard</h3>
+                        <p class="tool-description">Google's conversational AI</p>
+                        <a href="https://bard.google.com" class="tool-link" target="_blank">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Image Generation -->
+        <h2 class="category-title"><i class="fas fa-image category-icon"></i>AI Image Generation</h2>
+        <div class="row g-4">
+            <div class="col-md-4 col-lg-3">
+                <div class="tool-card">
+                    <div class="tool-info">
+                        <div class="tool-logo">
+                            <img src="https://openai.com/content/images/2022/05/dall-e-2.png" alt="DALL-E" onerror="this.classList.add('error')">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3 class="tool-name">DALL-E</h3>
+                        <p class="tool-description">Create images from text descriptions</p>
+                        <a href="https://openai.com/dall-e-2" class="tool-link" target="_blank">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="tool-card">
+                    <div class="tool-info">
+                        <div class="tool-logo">
+                            <img src="https://cdn.midjourney.com/assets/logo.svg" alt="Midjourney" onerror="this.classList.add('error')">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3 class="tool-name">Midjourney</h3>
+                        <p class="tool-description">Create stunning artwork with AI</p>
+                        <a href="https://www.midjourney.com" class="tool-link" target="_blank">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="tool-card">
+                    <div class="tool-info">
+                        <div class="tool-logo">
+                            <img src="https://stability.ai/assets/images/stability-ai-logo.svg" alt="Stable Diffusion" onerror="this.classList.add('error')">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h3 class="tool-name">Stable Diffusion</h3>
+                        <p class="tool-description">Open-source image generation</p>
+                        <a href="https://stability.ai" class="tool-link" target="_blank">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Development Tools -->
+        <h2 class="category-title"><i class="fas fa-code category-icon"></i>AI Development Tools</h2>
+        <div class="row g-4">
+            <div class="col-md-4 col-lg-3">
+                <div class="tool-card">
+                    <div class="tool-info">
+                        <div class="tool-logo">
+                            <img src="https://github.githubassets.com/images/modules/site/copilot/copilot-logo.svg" alt="GitHub Copilot" onerror="this.classList.add('error')">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3 class="tool-name">GitHub Copilot</h3>
+                        <p class="tool-description">AI pair programmer</p>
+                        <a href="https://github.com/features/copilot" class="tool-link" target="_blank">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="tool-card">
+                    <div class="tool-info">
+                        <div class="tool-logo">
+                            <img src="https://cursor.sh/static/cursor-logo.svg" alt="Cursor" onerror="this.classList.add('error')">
+                            <i class="fas fa-terminal"></i>
+                        </div>
+                        <h3 class="tool-name">Cursor</h3>
+                        <p class="tool-description">AI-powered code editor</p>
+                        <a href="https://cursor.sh" class="tool-link" target="_blank">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="tool-card">
+                    <div class="tool-info">
+                        <div class="tool-logo">
+                            <img src="https://replit.com/public/images/logo.svg" alt="Replit" onerror="this.classList.add('error')">
+                            <i class="fas fa-code-branch"></i>
+                        </div>
+                        <h3 class="tool-name">Replit</h3>
+                        <p class="tool-description">Collaborative coding platform</p>
+                        <a href="https://replit.com" class="tool-link" target="_blank">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Video & Audio -->
+        <h2 class="category-title"><i class="fas fa-film category-icon"></i>AI Video & Audio</h2>
+        <div class="row g-4">
+            <div class="col-md-4 col-lg-3">
+                <div class="tool-card">
+                    <div class="tool-info">
+                        <div class="tool-logo">
+                            <img src="https://runwayml.com/static/images/logo.svg" alt="RunwayML" onerror="this.classList.add('error')">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3 class="tool-name">RunwayML</h3>
+                        <p class="tool-description">AI video editing and generation</p>
+                        <a href="https://runwayml.com" class="tool-link" target="_blank">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="tool-card">
+                    <div class="tool-info">
+                        <div class="tool-logo">
+                            <img src="https://elevenlabs.io/static/images/logo.svg" alt="ElevenLabs" onerror="this.classList.add('error')">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <h3 class="tool-name">ElevenLabs</h3>
+                        <p class="tool-description">AI voice synthesis</p>
+                        <a href="https://elevenlabs.io" class="tool-link" target="_blank">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="tool-card">
+                    <div class="tool-info">
+                        <div class="tool-logo">
+                            <img src="https://www.descript.com/static/images/logo.svg" alt="Descript" onerror="this.classList.add('error')">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <h3 class="tool-name">Descript</h3>
+                        <p class="tool-description">AI-powered audio/video editor</p>
+                        <a href="https://www.descript.com" class="tool-link" target="_blank">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Business & Productivity -->
+        <h2 class="category-title"><i class="fas fa-briefcase category-icon"></i>AI Business & Productivity</h2>
+        <div class="row g-4">
+            <div class="col-md-4 col-lg-3">
+                <div class="tool-card">
+                    <div class="tool-info">
+                        <div class="tool-logo">
+                            <img src="https://www.notion.so/static/images/logo.svg" alt="Notion AI" onerror="this.classList.add('error')">
+                            <i class="fas fa-note-sticky"></i>
+                        </div>
+                        <h3 class="tool-name">Notion AI</h3>
+                        <p class="tool-description">AI-powered workspace</p>
+                        <a href="https://www.notion.so" class="tool-link" target="_blank">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="tool-card">
+                    <div class="tool-info">
+                        <div class="tool-logo">
+                            <img src="https://www.jasper.ai/static/images/logo.svg" alt="Jasper" onerror="this.classList.add('error')">
+                            <i class="fas fa-pen-fancy"></i>
+                        </div>
+                        <h3 class="tool-name">Jasper</h3>
+                        <p class="tool-description">AI content writing assistant</p>
+                        <a href="https://www.jasper.ai" class="tool-link" target="_blank">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+                <div class="tool-card">
+                    <div class="tool-info">
+                        <div class="tool-logo">
+                            <img src="https://www.grammarly.com/static/images/logo.svg" alt="Grammarly" onerror="this.classList.add('error')">
+                            <i class="fas fa-spell-check"></i>
+                        </div>
+                        <h3 class="tool-name">Grammarly</h3>
+                        <p class="tool-description">AI writing enhancement</p>
+                        <a href="https://www.grammarly.com" class="tool-link" target="_blank">Visit Website</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add more categories as needed -->
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

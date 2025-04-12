@@ -1,0 +1,103 @@
+# AI Chatbots & Assistants
+ChatGPT: https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg
+Claude: https://www.anthropic.com/static/images/claude-logo.png
+Bard: https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png
+Perplexity: https://www.perplexity.ai/static/images/logo.svg
+Pi: https://www.heypi.com/static/images/logo.svg
+Character.AI: https://www.character.ai/static/images/logo.svg
+YouChat: https://www.you.com/static/images/logo.svg
+HuggingChat: https://huggingface.co/static/images/logo.svg
+Mistral: https://www.mistral.ai/static/images/logo.svg
+
+# AI Image Generation
+DALL-E: https://upload.wikimedia.org/wikipedia/commons/0/04/DALL-E_logo.svg
+Midjourney: https://www.midjourney.com/static/images/logo.svg
+Stable Diffusion: https://stability.ai/static/images/logo.svg
+Adobe Firefly: https://www.adobe.com/static/images/logo.svg
+Leonardo.AI: https://www.leonardo.ai/static/images/logo.svg
+Bing Image Creator: https://www.bing.com/static/images/logo.svg
+DreamStudio: https://www.dreamstudio.ai/static/images/logo.svg
+Canva AI: https://www.canva.com/static/images/logo.svg
+Playground AI: https://www.playground.ai/static/images/logo.svg
+
+# AI Development Tools
+GitHub Copilot: https://github.com/static/images/logo.svg
+Cursor: https://www.cursor.sh/static/images/logo.svg
+Replit: https://www.replit.com/static/images/logo.svg
+Tabnine: https://www.tabnine.com/static/images/logo.svg
+Codeium: https://www.codeium.com/static/images/logo.svg
+Amazon CodeWhisperer: https://aws.amazon.com/static/images/logo.svg
+Sourcegraph Cody: https://www.sourcegraph.com/static/images/logo.svg
+
+# AI Video & Audio
+RunwayML: https://www.runwayml.com/static/images/logo.svg
+ElevenLabs: https://www.elevenlabs.io/static/images/logo.svg
+Descript: https://www.descript.com/static/images/logo.svg
+Synthesia: https://www.synthesia.io/static/images/logo.svg
+Murf: https://www.murf.ai/static/images/logo.svg
+HeyGen: https://www.heygen.com/static/images/logo.svg
+Pictory: https://www.pictory.ai/static/images/logo.svg
+
+# AI Business & Productivity
+Notion AI: https://www.notion.so/static/images/logo.svg
+Jasper: https://www.jasper.ai/static/images/logo.svg
+Copy.ai: https://www.copy.ai/static/images/logo.svg
+Grammarly: https://www.grammarly.com/static/images/logo.svg
+Otter.ai: https://www.otter.ai/static/images/logo.svg
+Fireflies: https://www.fireflies.ai/static/images/logo.svg
+Mem.ai: https://www.mem.ai/static/images/logo.svg
+
+# AI Research & Education
+Elicit: https://www.elicit.org/static/images/logo.svg
+Consensus: https://www.consensus.app/static/images/logo.svg
+Khanmigo: https://www.khanacademy.org/static/images/logo.svg
+Scite: https://www.scite.ai/static/images/logo.svg
+Scholarcy: https://www.scholarcy.com/static/images/logo.svg
+ChatPDF: https://www.chatpdf.com/static/images/logo.svg
+Explainpaper: https://www.explainpaper.com/static/images/logo.svg
+
+# AI Mobile Apps
+ChatGPT Mobile: https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg
+Lensa AI: https://www.lensa.ai/static/images/logo.svg
+Wombo Dream: https://www.wombo.art/static/images/logo.svg
+Remini: https://www.remini.ai/static/images/logo.svg
+Wonder AI: https://www.wonder.ai/static/images/logo.svg
+AI Mirror: https://www.aimirror.ai/static/images/logo.svg
+
+# AI Automation & Workflow
+Zapier: https://www.zapier.com/static/images/logo.svg
+Make: https://www.make.com/static/images/logo.svg
+Bardeen: https://www.bardeen.ai/static/images/logo.svg
+Automation Anywhere: https://www.automationanywhere.com/static/images/logo.svg
+UiPath: https://www.uipath.com/static/images/logo.svg
+Workato: https://www.workato.com/static/images/logo.svg
+
+# AI Healthcare
+DeepMind Health: https://www.deepmind.com/static/images/logo.svg
+Nuance DAX: https://www.nuance.com/static/images/logo.svg
+PathAI: https://www.pathai.com/static/images/logo.svg
+Butterfly Network: https://www.butterflynetwork.com/static/images/logo.svg
+
+# AI Finance
+Kensho: https://www.kensho.com/static/images/logo.svg
+Ayasdi: https://www.ayasdi.com/static/images/logo.svg
+Zest Finance: https://www.zestfinance.com/static/images/logo.svg
+Kavout: https://www.kavout.com/static/images/logo.svg
+
+# AI Gaming
+Unity AI: https://www.unity.com/static/images/logo.svg
+Inworld AI: https://www.inworld.ai/static/images/logo.svg
+Mods AI: https://www.mods.ai/static/images/logo.svg
+Scenario: https://www.scenario.gg/static/images/logo.svg
+
+# AI Music & Audio
+Suno AI: https://www.suno.ai/static/images/logo.svg
+Soundraw: https://www.soundraw.io/static/images/logo.svg
+LALAL.AI: https://www.lalal.ai/static/images/logo.svg
+Mubert: https://www.mubert.com/static/images/logo.svg
+
+# AI Language & Translation
+DeepL: https://www.deepl.com/static/images/logo.svg
+Reverso: https://www.reverso.net/static/images/logo.svg
+ELSA Speak: https://www.elsaspeak.com/static/images/logo.svg
+Lingoda: https://www.lingoda.com/static/images/logo.svg 
